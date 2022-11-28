@@ -1,0 +1,19 @@
+---
+version: '3'
+
+services:
+  app:
+    build: app
+    restart: always
+    env_file:
+      - variables.env
+  html:
+    build: html
+    restart: always
+    ports:
+      - 12080:80
+    env_file:
+      - variables.env
+
+
+
